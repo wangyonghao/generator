@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<jdbcDrivers>
+    <driver>
+        <driverClass>com.microsoft.jdbc.sqlserver.SQLServerDriver</driverClass>
+        <name>Microsoft SQL Server</name>
+        <url>jdbc:microsoft:sqlserver://&lt;server_name&gt;:&lt;1433&gt;</url>
+    </driver>
+    <driver>
+        <driverClass>org.hsqldb.jdbcDriver</driverClass>
+        <name>HSQLDB Server</name>
+        <url>jdbc:hsqldb:hsql://&lt;server&gt;[:&lt;1476&gt;]</url>
+    </driver>
+    <driver>
+        <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+        <name>Oracle (OCI driver)</name>
+        <url>jdbc:oracle:oci8:@&lt;database_name&gt;</url>
+    </driver>
+    <driver>
+        <driverClass>org.hsqldb.jdbcDriver</driverClass>
+        <name>HSQLDB Web Server</name>
+        <url>jdbc:hsqldb:http://&lt;server&gt;[:&lt;1476&gt;]</url>
+    </driver>
+    <driver>
+        <driverClass>org.postgresql.Driver</driverClass>
+        <name>PostgreSQL</name>
+        <url>jdbc:postgresql:[&lt;//host&gt;[:&lt;5432&gt;/]]&lt;database&gt;</url>
+    </driver>
+    <driver>
+        <driverClass>com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+        <name>Microsoft SQL Server 2005</name>
+        <url>jdbc:sqlserver://&lt;server_name&gt;:&lt;port&gt;[;databaseName=&lt;dbname&gt;]</url>
+    </driver>
+    <driver>
+        <driverClass>oracle.jdbc.OracleDriver</driverClass>
+        <name>Oracle</name>
+        <url>jdbc:oracle:thin:@&lt;server&gt;[:&lt;1521&gt;]:&lt;database_name&gt;</url>
+    </driver>
+    <driver>
+        <driverClass>com.mysql.jdbc.Driver</driverClass>
+        <name>MySQL Connector/J</name>
+        <url>jdbc:mysql://&lt;hostname&gt;[&lt;:3306&gt;]/&lt;dbname&gt;</url>
+    </driver>
+</jdbcDrivers>

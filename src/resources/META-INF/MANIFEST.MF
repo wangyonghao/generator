@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Class-Path: logback-core-1.2.3.jar postgresql-42.1.4.jar ojdbc14.jar s
+ qljdbc4.jar freemarker.jar beautyeye_lnf.jar velocity-1.7-dep.jar pos
+ tgresql-8.2-505.jdbc2.jar commons-collections-3.2.2.jar mysql-connect
+ or-java-5.1.45.jar commons-dbutils-1.6.jar velocity-1.7.jar commons-c
+ onfiguration2-2.1.jar commons-logging-1.2.jar freemarker-2.3.23.jar l
+ ogback-classic-1.2.3.jar slf4j-api-1.7.25.jar commons-lang3-3.6.jar c
+ ommons-lang-2.4.jar commons-beanutils-1.9.3.jar
+Main-Class: org.joy.generator.ui.GeneratorForm
+

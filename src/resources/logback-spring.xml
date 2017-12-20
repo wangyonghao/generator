@@ -1,0 +1,59 @@
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+  <property name="log.path" value="logs/server.log"/>
+  <property name="log.path.error" value="logs/server-error.log"/>
+  <property name="CONSOLE_LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss}  %highlight(%-5level) %magenta(%-4relative) --- [%yellow(%15.15thread)] %cyan(%-40.40logger{36}) : %msg%n"/>
+  <property name="CONSOLE_LOG_PATTERN_SRC" value="%date{yyyy-MM-dd HH:mm:ss}  %-5level %-4relative --- [%15.15thread] %-40.40logger{36} : %msg%n"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+	    <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <appender name="ROLLING_FILE_NORMAL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${log.path}</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	    <fileNamePattern>logs/server-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+	    <!-- 如果按天来回滚，则最大保存时间为N天，N天之前的都将被清理掉 -->
+	    <maxHistory>15</maxHistory>
+	    <!-- 日志总保存量为10GB -->
+	    <totalSizeCap>10GB</totalSizeCap>
+	    <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+		    <!-- 超过最大值，会重新建一个文件-->
+		    <maxFileSize>128MB</maxFileSize>
+	    </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN_SRC}</pattern>
+	    <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <appender name="ROLLING_FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>ERROR</level>
+    </filter>
+    <file>${log.path.error}</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	    <fileNamePattern>logs/server-error-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+	    <!-- 如果按天来回滚，则最大保存时间为N天，N天之前的都将被清理掉 -->
+      <maxHistory>15</maxHistory>
+	    <!-- 日志总保存量为10GB -->
+	    <totalSizeCap>10GB</totalSizeCap>
+	    <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+		    <!-- 超过最大值，会重新建一个文件-->
+		    <maxFileSize>128MB</maxFileSize>
+	    </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN_SRC}</pattern>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="ROLLING_FILE_NORMAL"/>
+    <appender-ref ref="ROLLING_FILE_ERROR"/>
+  </root>
+</configuration>

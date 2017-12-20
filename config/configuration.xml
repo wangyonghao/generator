@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<configuration>
+    <classpath/>
+    <connections>
+        <database name="yoreach">
+            <driverClass>oracle.jdbc.driver.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@10.1.20.111:1521:ORCL</url>
+            <username>oracle</username>
+            <password>oracle</password>
+            <schema>ORACLE</schema>
+        </database>
+    </connections>
+    <targetProject>E:/gen</targetProject>
+    <basePackage>com.bzgwl.yoreach</basePackage>
+    <author>coder</author>
+    <templates>
+        <template engine="freemarker" name="entity" selected="true">
+            <templateFile>entity.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/entity</targetPath>
+            <targetFileName>${table.entityName ? cap_first}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="searchVO" selected="true">
+            <templateFile>searchVO.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/vo</targetPath>
+            <targetFileName>${table.entityName ? cap_first}SearchVO.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="insertVO" selected="true">
+            <templateFile>insertVO.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/vo</targetPath>
+            <targetFileName>${table.entityName ? cap_first}InsertVO.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="updateVO" selected="true">
+            <templateFile>updateVO.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/vo</targetPath>
+            <targetFileName>${table.entityName ? cap_first}UpdateVO.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="controller" selected="true">
+            <templateFile>controller.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/controller</targetPath>
+            <targetFileName>${table.entityName ? cap_first}Controller.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="service" selected="true">
+            <templateFile>service.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/service</targetPath>
+            <targetFileName>${table.entityName ? cap_first}Service.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="mapper" selected="true">
+            <templateFile>mapper.java.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/mapper</targetPath>
+            <targetFileName>${table.entityName ? cap_first}Mapper.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="mapper.xml" selected="true">
+            <templateFile>mapper.xml.ftl</templateFile>
+            <targetPath>${targetProject}/src/main/java/${basePackage}/${table.moduleName}/${table.entityName}/mapper</targetPath>
+            <targetFileName>${table.entityName ? cap_first}Mapper.xml</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+    </templates>
+</configuration>
